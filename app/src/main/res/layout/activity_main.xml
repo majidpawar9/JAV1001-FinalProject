@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="Welcome"
+        android:text="@string/title_main"
         android:textColor="@color/primary"
         android:textSize="48sp"
         android:textStyle="bold" />
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Would you like to..."
+        android:text="@string/hint_main"
         android:textColor="@color/primary" />
 
 
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:background="@color/primary"
-            android:text="Sign Up" />
+            android:text="@string/signUp_btn" />
 
         <!--    Sign In Button  -->
         <Button
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:background="@color/primary"
-            android:text="Sign In"
+            android:text="@string/signIn_btn"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>

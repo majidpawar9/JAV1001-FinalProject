@@ -1,6 +1,7 @@
 package com.majid.cambrianapp
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,10 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.signUp.setOnClickListener {
-            startActivity(Intent(this,SignUpActivity::class.java))
+            startActivity(Intent(this, SignUpActivity::class.java))
         }
         binding.signIn.setOnClickListener {
-            startActivity(Intent(this,SignInActivity::class.java))
+            startActivity(Intent(this, SignInActivity::class.java))
         }
     }
 }

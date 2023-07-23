@@ -24,5 +24,8 @@ class MainActivity : AppCompatActivity() {
         binding.signUp.setOnClickListener {
             startActivity(Intent(this,SignUpActivity::class.java))
         }
+        binding.signIn.setOnClickListener {
+            startActivity(Intent(this,SignInActivity::class.java))
+        }
     }
 }

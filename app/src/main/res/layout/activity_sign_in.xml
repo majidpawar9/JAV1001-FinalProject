@@ -63,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:hint="Enter your Password"
+            android:inputType="textPassword"
             app:passwordToggleEnabled="false" />
     </LinearLayout>
 

@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <!--    MAIN Logo   -->
     <ImageView
         android:id="@+id/collegeLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/collegelogo" />
 
+    <!--    Title   -->
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/titleSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
-        android:text="SignIn"
+        android:text="@string/title_signIn"
         android:textColor="@color/primary"
         android:textSize="28sp"
         android:textStyle="bold" />
@@ -30,19 +31,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--    Email Text Indicator    -->
         <TextView
             android:id="@+id/emailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="Email ID:" />
+            android:text="@string/email_text" />
 
+        <!--    Email Text Input    -->
         <EditText
             android:id="@+id/emailInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:hint="Enter your email ID" />
+            android:hint="@string/email_input_hint" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,23 +53,25 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--    Email Password Indicator    -->
         <TextView
             android:id="@+id/passwordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="Password" />
+            android:text="@string/password_text" />
 
+        <!--    Email Password Input    -->
         <EditText
             android:id="@+id/passwordInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:hint="Enter your Password"
-            android:inputType="textPassword"
-            app:passwordToggleEnabled="false" />
+            android:hint="@string/password_input_hint"
+            android:inputType="textPassword" />
     </LinearLayout>
 
+    <!--    Sign Up Button    -->
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
@@ -74,7 +79,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:background="@color/primary"
-        android:text="SignIn"
+        android:text="@string/signIn_btn"
         android:textColor="#FFFFFF" />
 
     <LinearLayout
@@ -84,18 +89,20 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
+        <!--    Not a User Text Indicator    -->
         <TextView
             android:id="@+id/notUserInd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Not a user yet? " />
 
+        <!--    Redirect to Sign Up Button    -->
         <Button
             android:id="@+id/redSignUp"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SignUp"
+            android:text="@string/signUp_btn"
             android:textColor="@color/primary" />
     </LinearLayout>
 </LinearLayout>

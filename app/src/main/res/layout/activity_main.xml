@@ -6,30 +6,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <!--    MAIN Logo   -->
     <ImageView
         android:id="@+id/collegeLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/collegelogo"/>
+        app:srcCompat="@drawable/collegelogo" />
 
+    <!--    Title   -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="Welcome"
+        android:text="@string/title_main"
         android:textColor="@color/primary"
         android:textSize="48sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
+    <!--    Guiding text  -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Would you like to..."
-        android:textColor="@color/primary"/>
+        android:text="@string/hint_main"
+        android:textColor="@color/primary" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,16 +40,17 @@
         android:layout_marginTop="10dp"
         android:gravity="center">
 
+        <!--    Sign Up Button  -->
         <Button
             android:id="@+id/signUp"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="Sign Up"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:background="@color/primary"
-            />
+            android:text="@string/signUp_btn" />
 
+        <!--    Sign In Button  -->
         <Button
             android:id="@+id/signIn"
             style="@style/Widget.AppCompat.Button"
@@ -54,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:background="@color/primary"
-            android:text="Sign In"
+            android:text="@string/signIn_btn"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>

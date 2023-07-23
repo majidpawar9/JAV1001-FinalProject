@@ -22,9 +22,12 @@ class MainActivity : AppCompatActivity() {
         // for the UI of this activity
         setContentView(binding.root)
 
+        // This button will redirect to SignUpActivity Layout
         binding.signUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
+
+        // This button will redirect to SignUpActivity Layout
         binding.signIn.setOnClickListener {
             startActivity(Intent(this, SignInActivity::class.java))
         }

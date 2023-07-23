@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Cambrian App</string>
+<!--    Title of layouts-->
+    <string name="title_main">Welcome</string>
+    <string name="title_signIn">Sign In</string>
+    <string name="title_signUp">Sign Up</string>
+
+
+    <string name="hint_main">Would you like to...</string>
+    <string name="signUp_btn">Sign Up</string>
+    <string name="signIn_btn">Sign In</string>
+    <string name="email_text">Email ID:</string>
+    <string name="email_input_hint">Enter your email ID</string>
+    <string name="password_text">Password</string>
+    <string name="password_input_hint">Enter your Password</string>
+
+
+    <string name="firstName_text">First Name: </string>
+    <string name="firstName_input_hint">Enter your First Name</string>
+    <string name="lastName_text">Last Name: </string>
+    <string name="lastName_input_hint">Enter your Last Name</string>
+    <string name="phone_text">Phone Number:</string>
+    <string name="phone_input_hint">Enter your Phone Number</string>
+    <string name="setPassword_input_hint">Set your Password here</string>
+    <string name="userAlready_text">Already a user? </string>
 </resources>

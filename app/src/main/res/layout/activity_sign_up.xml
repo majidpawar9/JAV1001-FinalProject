@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <!--    MAIN Logo   -->
     <ImageView
         android:id="@+id/collegeLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/collegelogo" />
 
+    <!--    Title    -->
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/titleSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
-        android:text="SignUp"
+        android:text="@string/title_signUp"
         android:textColor="@color/primary"
         android:textSize="28sp"
         android:textStyle="bold" />
@@ -31,19 +32,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--    First Name Text Indicator    -->
         <TextView
             android:id="@+id/firstNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="First Name:" />
+            android:text="@string/firstName_text" />
 
+        <!--    First Name Text Input    -->
         <EditText
             android:id="@+id/firstNameInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:hint="Enter your First Name" />
+            android:hint="@string/firstName_input_hint" />
     </LinearLayout>
 
     <LinearLayout
@@ -51,19 +54,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--    Last Name Text Indicator    -->
         <TextView
             android:id="@+id/lastNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="Last Name:" />
+            android:text="@string/lastName_text" />
 
+        <!--    Last Name Text Input    -->
         <EditText
             android:id="@+id/lastNameInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:hint="Enter your Last Name" />
+            android:hint="@string/lastName_input_hint" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,19 +76,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--    Email Text Indicator    -->
         <TextView
             android:id="@+id/emailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="Email ID:" />
+            android:text="@string/email_text" />
 
+        <!--    Email Text Input    -->
         <EditText
             android:id="@+id/emailInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:hint="Enter your email ID" />
+            android:hint="@string/email_input_hint" />
     </LinearLayout>
 
     <LinearLayout
@@ -91,20 +98,22 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--    Phone Number Indicator    -->
         <TextView
             android:id="@+id/phoneText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="Phone Number:" />
+            android:text="@string/phone_text" />
 
+        <!--    Phone Number Input    -->
         <EditText
             android:id="@+id/phoneInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:inputType="number"
-            android:hint="Enter your Phone Number" />
+            android:hint="@string/phone_input_hint"
+            android:inputType="number" />
     </LinearLayout>
 
     <LinearLayout
@@ -112,22 +121,25 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <!--    Password Text Indicator    -->
         <TextView
             android:id="@+id/passwordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:text="Password:" />
+            android:text="@string/password_text" />
 
+        <!--    Password Text Input    -->
         <EditText
             android:id="@+id/passwordInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:inputType="textPassword"
-            android:hint="Set your Password here" />
+            android:hint="@string/setPassword_input_hint"
+            android:inputType="textPassword" />
     </LinearLayout>
 
+    <!--    Sign Up Button    -->
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
@@ -135,7 +147,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:background="@color/primary"
-        android:text="SignUp"
+        android:text="@string/signUp_btn"
         android:textColor="#FFFFFF" />
 
     <LinearLayout
@@ -145,18 +157,20 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
+        <!--    Already User Text Indicator    -->
         <TextView
             android:id="@+id/alrUserInd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already a user? " />
+            android:text="@string/userAlready_text" />
 
+        <!--    Redirect to Sign In Button    -->
         <Button
             android:id="@+id/redSignIn"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SignIn"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:textColor="@color/primary"/>
+            android:text="@string/signIn_btn"
+            android:textColor="@color/primary" />
     </LinearLayout>
 </LinearLayout>

@@ -13,6 +13,11 @@
         android:theme="@style/Theme.CambrianApp"
         tools:targetApi="31">
         <activity
+            android:name=".UserLoggedInActivity"
+            android:exported="false"
+            android:label="@string/title_activity_user_logged_in"
+            android:theme="@style/Theme.CambrianApp.NoActionBar" />
+        <activity
             android:name=".SignInActivity"
             android:exported="false" />
         <activity

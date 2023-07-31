@@ -21,5 +21,8 @@ class SignInActivity : AppCompatActivity() {
         binding.redSignUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
+        binding.signInButton.setOnClickListener {
+            startActivity(Intent(this, UserLoggedInActivity::class.java))
+        }
     }
 }

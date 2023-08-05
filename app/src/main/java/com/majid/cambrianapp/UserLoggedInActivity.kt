@@ -2,6 +2,7 @@ package com.majid.cambrianapp
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ui.NavigationUI
 import com.majid.cambrianapp.databinding.ActivityUserLoggedInBinding
 
 class UserLoggedInActivity : AppCompatActivity() {
@@ -37,11 +39,12 @@ class UserLoggedInActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_logout
+                R.id.nav_home, R.id.nav_apply, R.id.nav_logout
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -54,4 +57,11 @@ class UserLoggedInActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_user_logged_in)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_user_logged_in)
+
+        return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item)
+    }
+
 }

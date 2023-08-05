@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_apply"
+        android:name="com.majid.cambrianapp.ui.apply.ApplyFragment"
+        android:label="@string/menu_apply"
+        tools:layout="@layout/fragment_apply" />
+
+    <fragment
         android:id="@+id/nav_logout"
         android:name="com.majid.cambrianapp.ui.logout.LogoutFragment"
         android:label="@string/menu_logout"

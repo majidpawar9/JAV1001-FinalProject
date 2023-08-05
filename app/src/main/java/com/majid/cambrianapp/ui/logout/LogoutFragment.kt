@@ -4,39 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.majid.cambrianapp.databinding.FragmentLogoutBinding
-
-class LogoutFragment : Fragment(){
+import com.majid.cambrianapp.R
 
 
-    private var _binding: FragmentLogoutBinding? = null
+class LogoutFragment : Fragment() {
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val LogoutViewModel = ViewModelProvider(this).get(LogoutViewModel::class.java)
 
-        _binding = FragmentLogoutBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textLogout
-        LogoutViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        Toast.makeText(context, "Successfully Logged Out", Toast.LENGTH_SHORT).show()
+        return inflater.inflate(R.layout.activity_sign_in, container, true)
     }
 }

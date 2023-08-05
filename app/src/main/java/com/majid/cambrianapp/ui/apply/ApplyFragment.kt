@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.majid.cambrianapp.R
 import com.majid.cambrianapp.databinding.FragmentApplyBinding
 
 class ApplyFragment : Fragment(){
@@ -23,16 +22,7 @@ class ApplyFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val ApplyViewModel = ViewModelProvider(this).get(ApplyViewModel::class.java)
-
-        _binding = FragmentApplyBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textApply
-        ApplyViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return inflater.inflate(R.layout.fragment_apply,container, false)
     }
 
     override fun onDestroyView() {

@@ -68,10 +68,12 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
                 startActivity(Intent(this, SignUpActivity::class.java))
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             }
-        R.id.nav_home -> {
-            startActivity(Intent(this, UserLoggedInActivity::class.java))
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        }
+
+            R.id.nav_home -> {
+                startActivity(Intent(this, UserLoggedInActivity::class.java))
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+
             R.id.nav_apply -> {
                 startActivity(Intent(this, UserLoggedInActivity::class.java))
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)

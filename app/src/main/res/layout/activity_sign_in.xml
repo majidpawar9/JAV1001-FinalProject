@@ -41,7 +41,7 @@
 
         <!--    Email Text Input    -->
         <EditText
-            android:id="@+id/emailInput"
+            android:id="@+id/emailInputUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -63,7 +63,7 @@
 
         <!--    Email Password Input    -->
         <EditText
-            android:id="@+id/passwordInput"
+            android:id="@+id/passwordInputUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

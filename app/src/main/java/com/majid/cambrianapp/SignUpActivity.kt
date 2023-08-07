@@ -2,10 +2,11 @@ package com.majid.cambrianapp
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.text.TextUtils
+import android.widget.Toast
 import com.majid.cambrianapp.databinding.ActivitySignUpBinding
 
-class SignUpActivity : AppCompatActivity() {
+class SignUpActivity : BaseActivity() {
     // enabled binding in a module
     // ActivitySignUpBinding creates a binding class for each XML layout file present in that module.
     private lateinit var binding: ActivitySignUpBinding
@@ -19,7 +20,54 @@ class SignUpActivity : AppCompatActivity() {
 
         // This button will redirect to SignInActivity Layout
         binding.redSignIn.setOnClickListener {
+
             startActivity(Intent(this, SignInActivity::class.java))
+        }
+        binding.signUpButton.setOnClickListener {
+            registerUser()
+        }
+    }
+
+    private fun registerUser(){
+        val firstName: String = binding.firstNameInput.text.toString().trim { it <= ' '}
+        val lastName: String = binding.lastNameInput.text.toString().trim { it <= ' '}
+        val email: String = binding.emailInput.text.toString().trim { it <= ' '}
+        val phone: String = binding.phoneInput.text.toString().trim { it <= ' '}
+        val password: String = binding.passwordInput.text.toString().trim { it <= ' '}
+
+        if (validateForm(firstName,lastName,email,phone,password)){
+            Toast.makeText(this@SignUpActivity,
+            "Now we can register a New User",
+            Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    private fun validateForm(firstName: String, lastName:String, email:String, phoneNumber: String, password:String): Boolean{
+        return when {
+            TextUtils.isEmpty(firstName) -> {
+                showErrorSnackBar("Please Enter First Name!")
+                false
+            }
+            TextUtils.isEmpty(lastName) -> {
+                showErrorSnackBar("Please Enter Last Name!")
+                false
+            }
+            TextUtils.isEmpty(email) -> {
+                showErrorSnackBar("Please Enter Email!")
+                false
+            }
+            TextUtils.isEmpty(phoneNumber) -> {
+                showErrorSnackBar("Please Enter Phone Number!")
+                false
+            }
+            TextUtils.isEmpty(password) -> {
+                showErrorSnackBar("Please Enter Password!")
+                false
+            }
+            else -> {
+                true
+            }
         }
     }
 }

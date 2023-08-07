@@ -2,10 +2,9 @@ package com.majid.cambrianapp
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.majid.cambrianapp.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     // enabled binding in a module
     // ActivityMainBinding creates a binding class for each XML layout file present in that module.
     private lateinit var binding: ActivityMainBinding

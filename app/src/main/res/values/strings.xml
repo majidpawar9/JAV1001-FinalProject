@@ -34,4 +34,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_apply">Apply</string>
     <string name="menu_logout">Logout</string>
+
+    <string name="please_wait">Please Wait!</string>
 </resources>

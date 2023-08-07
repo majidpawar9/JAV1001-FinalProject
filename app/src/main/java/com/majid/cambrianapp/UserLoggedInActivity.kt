@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -18,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.majid.cambrianapp.databinding.ActivityUserLoggedInBinding
 import com.majid.cambrianapp.ui.logout.LogoutFragment
 
-class UserLoggedInActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityUserLoggedInBinding

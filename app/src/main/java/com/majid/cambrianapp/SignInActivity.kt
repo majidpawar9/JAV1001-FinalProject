@@ -1,11 +1,10 @@
 package com.majid.cambrianapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.majid.cambrianapp.databinding.ActivitySignInBinding
 
-class SignInActivity : AppCompatActivity() {
+class SignInActivity : BaseActivity() {
     // enabled binding in a module
     // ActivitySignInBinding creates a binding class for each XML layout file present in that module.
     private lateinit var binding: ActivitySignInBinding

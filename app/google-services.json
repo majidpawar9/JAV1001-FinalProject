@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "916264051407",
+    "project_id": "cambrainapp",
+    "storage_bucket": "cambrainapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916264051407:android:5f32d54d1176282b814dba",
+        "android_client_info": {
+          "package_name": "com.majid.cambrianapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916264051407-a355i2klvvj4sr4vm3bd11jmgv0k3b32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR4RAoWnX5e6f4fO3Xs2QisNxwYu1Kx-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916264051407-a355i2klvvj4sr4vm3bd11jmgv0k3b32.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

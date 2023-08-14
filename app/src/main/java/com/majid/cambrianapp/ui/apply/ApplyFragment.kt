@@ -1,5 +1,6 @@
 package com.majid.cambrianapp.ui.apply
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ class ApplyFragment : Fragment(){
     // onDestroyView.
     private val binding get() = _binding!!
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,10 +35,10 @@ class ApplyFragment : Fragment(){
         val view = inflater.inflate(R.layout.fragment_apply, container, false)!!
         recyclerView = view.findViewById(R.id.recyclerView)
         setupRecyclerView(recyclerView)
-        val myButton = view.findViewById<Button>(R.id.applyButton)
-        myButton.setOnClickListener {
+        val applybutton = view.findViewById<Button>(R.id.applyButton)
+        applybutton.setOnClickListener {
             iterateOverRecyclerView()
-
+            courseAdapter.notifyDataSetChanged()
         }
         return view
     }
@@ -58,7 +60,7 @@ class ApplyFragment : Fragment(){
             val isChecked = course.isSelected
             if (isChecked){
             CourseManager.addSelectedCourse(course)
-        }
+            }
         }
     }
     private fun createSampleCourses(): List<Course> {

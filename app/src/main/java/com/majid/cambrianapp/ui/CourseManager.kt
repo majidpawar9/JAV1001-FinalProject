@@ -17,4 +17,15 @@ object CourseManager {
             selectedCourses.add(course)
         }
     }
+    fun removeUnSelectedCourse(course: Course) {
+        if(selectedCourses.contains(course)) {
+            selectedCourses.remove(course)
+        }
+        else{
+            return
+        }
+    }
+    fun addList(course: List<Course>){
+        selectedCourses.addAll(course)
+    }
 }

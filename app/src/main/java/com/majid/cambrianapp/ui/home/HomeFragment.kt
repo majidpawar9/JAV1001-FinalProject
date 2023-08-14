@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,10 +30,16 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val view = inflater.inflate(R.layout.fragment_home, container, false)!!
+        val removebutton = view.findViewById<Button>(R.id.removeButton)
+        removebutton.setOnClickListener {
+            iterateOverRecyclerView()
+        }
         recyclerView = view.findViewById(R.id.recyclerView)
         setupRecyclerView(recyclerView)
+
         return view
     }
+
     private fun setupRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -46,6 +53,18 @@ class HomeFragment : Fragment() {
         courseAdapter = CourseAdapter(CourseManager.getSelectedCourses())
         recyclerView.adapter = courseAdapter
     }
+    private fun iterateOverRecyclerView() {
+
+        val courseAdapter = recyclerView.adapter as CourseAdapter
+
+        for (course in courseAdapter.courses) {
+            val isChecked = course.isSelected
+            if (isChecked == false){
+                CourseManager.removeUnSelectedCourse(course)
+            }
+
+        }
+    }
     private fun createSampleCourses(): List<Course> {
         return listOf(
             Course("JAV1001", "Introduction to Programming", "Intro to programming concepts.", "Prof. Smith",false),
@@ -55,6 +74,8 @@ class HomeFragment : Fragment() {
             Course("BTA1002", "Calculus I", "Fundamental calculus concepts.", "Prof. Johnson",false)
         )
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

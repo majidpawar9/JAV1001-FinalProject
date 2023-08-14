@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.majid.cambrianapp.databinding.ActivitySignUpBinding
+import com.majid.cambrianapp.firebase.FireStore
 
 class SignUpActivity : BaseActivity() {
     // enabled binding in a module
@@ -45,20 +46,30 @@ class SignUpActivity : BaseActivity() {
                     if (task.isSuccessful) {
                         val firebaseUser: FirebaseUser = task.result!!.user!!
                         val registeredEmail = firebaseUser.email!!
+                        val user = User(firebaseUser.uid, name = firstName +" "+ lastName,registeredEmail)
+                        FireStore().registerUser(this,user)
                         Toast.makeText(
                             this,
-                            "$firstName you have successfully register $registeredEmail",
+                            "You have Registered successfully",
                             Toast.LENGTH_SHORT
                         ).show()
                         FirebaseAuth.getInstance().signOut()
-                        finish()
                     } else {
                         Toast.makeText(this, "Registration Failed!", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
     }
-
+    fun userRegisteredSuccess(){
+        Toast.makeText(
+            this,
+            "You have logged In successfully",
+            Toast.LENGTH_SHORT
+        ).show()
+        hideProgressDialog()
+        FirebaseAuth.getInstance().signOut()
+        finish()
+    }
     private fun validateForm(firstName: String, lastName:String, email:String, phoneNumber: String, password:String): Boolean{
         return when {
             TextUtils.isEmpty(firstName) -> {

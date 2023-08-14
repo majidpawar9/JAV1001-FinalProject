@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.majid.cambrianapp.databinding.ActivitySignInBinding
+import com.majid.cambrianapp.firebase.FireStore
 
 class SignInActivity : BaseActivity() {
     // enabled binding in a module
@@ -48,8 +49,7 @@ class SignInActivity : BaseActivity() {
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("Sign In", "createUserWithEmail:success")
-                        val user = auth.currentUser
-                        startActivity(Intent(this, UserLoggedInActivity::class.java))
+                        FireStore().signInUser(this)
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w("Sign In", "createUserWithEmail:failure", task.exception)
@@ -61,6 +61,12 @@ class SignInActivity : BaseActivity() {
                     }
                 }
         }
+    }
+
+    fun signInSuccess(user: User){
+        hideProgressDialog()
+        startActivity(Intent(this, UserLoggedInActivity::class.java))
+        finish()
     }
     private fun validateSignIn(email:String, password:String): Boolean{
         return when {

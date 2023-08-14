@@ -35,5 +35,8 @@
     <string name="menu_apply">Apply</string>
     <string name="menu_logout">Logout</string>
 
+    <string name="curr_user"></string>
+    <string name="curr_user_mail"></string>
+
     <string name="please_wait">Please Wait!</string>
 </resources>

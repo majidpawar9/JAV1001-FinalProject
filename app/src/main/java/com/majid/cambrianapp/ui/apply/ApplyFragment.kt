@@ -23,6 +23,7 @@ class ApplyFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.fragment_apply,container, false)
+
     }
 
     override fun onDestroyView() {

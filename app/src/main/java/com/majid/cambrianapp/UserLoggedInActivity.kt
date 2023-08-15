@@ -88,6 +88,7 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             }
         }
+
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }

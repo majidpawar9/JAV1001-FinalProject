@@ -13,7 +13,9 @@ class NavHeaderUserLoggedInActivity: BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = NavHeaderUserLoggedInBinding.inflate(layoutInflater)
         val user = auth.currentUser
-        
+
+        binding.navHeadUserEmail.text = "Majid"
     }
+
 
 }

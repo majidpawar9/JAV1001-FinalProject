@@ -2,9 +2,11 @@ package com.majid.cambrianapp
 
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -38,8 +40,7 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
         setSupportActionBar(binding.appBarUserLoggedIn.toolbar)
 
         binding.appBarUserLoggedIn.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            openEmailApp()
         }
 
 
@@ -90,4 +91,31 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+    private fun openEmailApp() {
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.data = Uri.parse("mailto:") // Use "mailto:" scheme
+
+        // Set email recipients (optional)
+        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("recipient@example.com"))
+
+        // Set email subject (optional)
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Subject of the email")
+
+        // Set initial text (optional)
+        intent.putExtra(Intent.EXTRA_TEXT, "Initial text of the email")
+
+        // Verify that there's an email app available to handle the intent
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        } else {
+            Toast.makeText(
+                this,
+                "You don't have email App",
+                Toast.LENGTH_SHORT
+            ).show()
+            // Handle case where no email app is available
+            // Show an error message or take alternative action
+        }
+    }
+
 }

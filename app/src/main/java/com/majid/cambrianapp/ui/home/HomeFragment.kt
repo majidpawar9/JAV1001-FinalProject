@@ -1,11 +1,16 @@
 package com.majid.cambrianapp.ui.home
 
+import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.customview.widget.Openable
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.navigateUp
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.majid.cambrianapp.R
@@ -18,6 +23,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var courseAdapter: CourseAdapter
     private lateinit var recyclerView: RecyclerView
+    private lateinit var mProgressDialog: Dialog
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
@@ -61,21 +67,21 @@ class HomeFragment : Fragment() {
             val isChecked = course.isSelected
             if (isChecked == false){
                 CourseManager.removeUnSelectedCourse(course)
+                val navController = findNavController()
+                navController.navigate(R.id.nav_home)
             }
 
         }
     }
     private fun createSampleCourses(): List<Course> {
         return listOf(
-            Course("JAV1001", "Introduction to Programming", "Intro to programming concepts.", "Prof. Smith",false),
-            Course("WEB1001", "Calculus I", "Fundamental calculus concepts.", "Prof. Johnson",false),
-            Course("ISP1002", "Introduction to Programming", "Intro to programming concepts.", "Prof. Smith",false),
-            Course("DBA1000", "Introduction to Programming", "Intro to programming concepts.", "Prof. Smith",false),
-            Course("BTA1002", "Calculus I", "Fundamental calculus concepts.", "Prof. Johnson",false)
+            Course("JAV1001", "Android Development", "Intro to Kotlin programming concepts.", "Prof. Graham Gibson",false),
+            Course("WEB1001", "Web Development", "Intro to C# programming concepts.", "Prof. Brent Ritchie",false),
+            Course("ISP1002", "iOS Development", "Intro to Swift programming concepts.", "Prof. Joshua Most",false),
+            Course("DBA1000", "Data Base - SQL", "Intro to SQL programming concepts.", "Prof. Joseph Glover",false),
+            Course("BTA1002", "Business Analysis", "Intro to Agile Methodology", "Prof. Imane Richard",false)
         )
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()

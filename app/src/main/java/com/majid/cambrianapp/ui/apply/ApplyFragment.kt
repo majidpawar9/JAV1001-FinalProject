@@ -1,5 +1,6 @@
 package com.majid.cambrianapp.ui.apply
 
+import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.majid.cambrianapp.R
 import com.majid.cambrianapp.databinding.FragmentApplyBinding
 import com.majid.cambrianapp.ui.CourseManager
+import com.majid.cambrianapp.ui.home.HomeFragment
 
 class ApplyFragment : Fragment(){
 
@@ -26,7 +30,7 @@ class ApplyFragment : Fragment(){
     // onDestroyView.
     private val binding get() = _binding!!
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged", "ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,7 +42,8 @@ class ApplyFragment : Fragment(){
         val applybutton = view.findViewById<Button>(R.id.applyButton)
         applybutton.setOnClickListener {
             iterateOverRecyclerView()
-            courseAdapter.notifyDataSetChanged()
+            val navController = findNavController()
+            navController.navigate(R.id.nav_home)
         }
         return view
     }

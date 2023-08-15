@@ -42,6 +42,7 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
                 .setAction("Action", null).show()
         }
 
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_user_logged_in)
@@ -54,6 +55,7 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

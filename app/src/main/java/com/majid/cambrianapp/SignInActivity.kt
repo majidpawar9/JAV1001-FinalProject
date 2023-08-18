@@ -37,12 +37,14 @@ class SignInActivity : BaseActivity() {
         }
     }
 
+    // Function to handle user sign-in
     private fun signInUser(){
         val email: String = binding.emailInputUser.text.toString().trim() { it <= ' '}
         val password: String = binding.passwordInputUser.text.toString().trim() { it <= ' '}
-
+        // Validate input before attempting sign-in
         if(validateSignIn(email,password)){
             showProgressDialog(resources.getString(R.string.please_wait))
+            // Authenticate with Firebase
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     hideProgressDialog()
@@ -63,11 +65,14 @@ class SignInActivity : BaseActivity() {
         }
     }
 
+    // Function to handle sign-in success
     fun signInSuccess(user: User){
         hideProgressDialog()
+        // Navigate to the user's home activity
         startActivity(Intent(this, UserLoggedInActivity::class.java))
         finish()
     }
+    // Function to validate sign-in input
     private fun validateSignIn(email:String, password:String): Boolean{
         return when {
             TextUtils.isEmpty(email) -> {

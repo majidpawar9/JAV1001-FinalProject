@@ -31,6 +31,7 @@ class SignUpActivity : BaseActivity() {
         }
     }
 
+    //function to register User
     private fun registerUser(){
         val firstName: String = binding.firstNameInput.text.toString().trim { it <= ' '}
         val lastName: String = binding.lastNameInput.text.toString().trim { it <= ' '}
@@ -38,12 +39,14 @@ class SignUpActivity : BaseActivity() {
         val phone: String = binding.phoneInput.text.toString().trim { it <= ' '}
         val password: String = binding.passwordInput.text.toString().trim { it <= ' '}
 
+        // validate form will validate every text field
         if (validateForm(firstName,lastName,email,phone,password)){
             showProgressDialog(resources.getString(R.string.please_wait))
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task ->
                     hideProgressDialog()
                     if (task.isSuccessful) {
+                        //creating a new user in Firebase
                         val firebaseUser: FirebaseUser = task.result!!.user!!
                         val registeredEmail = firebaseUser.email!!
                         val user = User(firebaseUser.uid, name = firstName,registeredEmail, phone = phone)
@@ -60,6 +63,8 @@ class SignUpActivity : BaseActivity() {
                 }
         }
     }
+
+    //to indicate and log user successfully registered
     fun userRegisteredSuccess(){
         Toast.makeText(
             this,
@@ -70,6 +75,8 @@ class SignUpActivity : BaseActivity() {
         FirebaseAuth.getInstance().signOut()
         finish()
     }
+
+    //validation form which will validate all EditText inputs
     private fun validateForm(firstName: String, lastName:String, email:String, phoneNumber: String, password:String): Boolean{
         return when {
             TextUtils.isEmpty(firstName) -> {

@@ -35,11 +35,15 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Inflate the fragment's layout
         val view = inflater.inflate(R.layout.fragment_home, container, false)!!
+
+        // Set up the remove button click listener
         val removebutton = view.findViewById<Button>(R.id.removeButton)
         removebutton.setOnClickListener {
             iterateOverRecyclerView()
         }
+        // Initialize the RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView)
         setupRecyclerView(recyclerView)
 
@@ -49,6 +53,8 @@ class HomeFragment : Fragment() {
     private fun setupRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Retrieve selected courses from CourseManager and populate the RecyclerView
         val courses = createSampleCourses() ?: emptyList() // Use empty list if null
         courses.forEach { course ->
             if (course.isSelected) {

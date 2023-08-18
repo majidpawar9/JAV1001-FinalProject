@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for the header of the navigation drawer -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -11,6 +12,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin">
 
+    <!-- Image view for the user profile image or icon -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -19,6 +21,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/collegelogo" />
 
+    <!-- TextView for displaying the user's name -->
     <TextView
         android:id="@+id/navHeadUserName"
         android:layout_width="wrap_content"
@@ -27,6 +30,7 @@
         android:text=""
         android:textColor="@color/black" />
 
+    <!-- TextView for displaying the user's email -->
     <TextView
         android:id="@+id/navHeadUserEmail"
         android:layout_width="wrap_content"

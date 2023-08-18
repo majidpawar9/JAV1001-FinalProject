@@ -36,14 +36,16 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
         binding = ActivityUserLoggedInBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        // Get the current user
         val user = auth.currentUser
         setSupportActionBar(binding.appBarUserLoggedIn.toolbar)
 
+        // Floating action button to open email app
         binding.appBarUserLoggedIn.fab.setOnClickListener { view ->
             openEmailApp()
         }
 
-
+        // Configure top-level destinations and drawer layout
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_user_logged_in)
@@ -74,26 +76,30 @@ class UserLoggedInActivity : BaseActivity(), NavigationView.OnNavigationItemSele
         when (item.itemId) {
 
             R.id.nav_logout -> {
+                // Navigate to the sign-up activity and clear previous activities
                 startActivity(Intent(this, SignUpActivity::class.java))
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             }
 
             R.id.nav_home -> {
+                // Navigate to the user logged in activity and clear previous activities
                 startActivity(Intent(this, UserLoggedInActivity::class.java))
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             }
 
             R.id.nav_apply -> {
+                // Navigate to the user logged in activity and clear previous activities
                 startActivity(Intent(this, UserLoggedInActivity::class.java))
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             }
         }
-
+        // Close the navigation drawer after an item is selected
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
     private fun openEmailApp() {
         val intent = Intent(Intent.ACTION_SENDTO)
+        // Create an intent to open the email app
         intent.data = Uri.parse("mailto:") // Use "mailto:" scheme
 
         // Set email recipients (optional)

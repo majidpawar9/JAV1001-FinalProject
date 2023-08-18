@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Profile layout -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Profile title -->
     <TextView
         android:id="@+id/profileTitle"
         android:layout_width="match_parent"
@@ -21,67 +23,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/profDisp"
-        android:layout_width="match_parent"
+    <!-- Email input section -->
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:text="You have selected the below courses"
-        android:textColor="@color/primary"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+        android:layout_gravity="center">
 
+        <!--    Email Text Indicator    -->
+        <TextView
+            android:id="@+id/profEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="@string/email_text" />
 
+        <!--    Email Text Input    -->
+        <EditText
+            android:id="@+id/profEmailInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/email_input_hint"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
+    <!-- Phone number input section -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
-<LinearLayout
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_gravity="center">
+        <!--    Phone Number Indicator    -->
+        <TextView
+            android:id="@+id/profPhoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="@string/phone_text" />
 
-<!--    Email Text Indicator    -->
-<TextView
-    android:id="@+id/profEmailText"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginRight="5dp"
-    android:text="@string/email_text" />
+        <!--    Phone Number Input    -->
+        <EditText
+            android:id="@+id/profPhoneInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/phone_input_hint"
+            android:inputType="number"
+            android:textColor="@color/primary" />
+    </LinearLayout>
 
-<!--    Email Text Input    -->
-<EditText
-    android:id="@+id/profEmailInput"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="5dp"
-    android:hint="@string/email_input_hint"
-    android:textColor="@color/black"/>
-</LinearLayout>
-
-<LinearLayout
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_gravity="center">
-
-<!--    Phone Number Indicator    -->
-<TextView
-    android:id="@+id/profPhoneText"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginRight="5dp"
-    android:text="@string/phone_text" />
-
-<!--    Phone Number Input    -->
-<EditText
-    android:id="@+id/profPhoneInput"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="5dp"
-    android:hint="@string/phone_input_hint"
-    android:textColor="@color/primary"
-    android:inputType="number" />
-</LinearLayout>
-
+    <!-- Toggle button for edit/save -->
     <ToggleButton
         android:id="@+id/editButton"
         android:layout_width="wrap_content"

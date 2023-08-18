@@ -19,8 +19,9 @@ class LogoutFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        // Display a toast message indicating successful logout
         Toast.makeText(context, "Successfully Logged Out", Toast.LENGTH_SHORT).show()
+        // Inflate the specified layout for the fragment
         return inflater.inflate(R.layout.activity_sign_in, container, true)
     }
 }

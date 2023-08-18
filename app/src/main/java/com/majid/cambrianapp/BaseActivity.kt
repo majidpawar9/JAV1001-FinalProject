@@ -8,15 +8,15 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 open class BaseActivity : AppCompatActivity() {
-//    private var doublePressedToExitPressedOnce = false
+    // Properties
     private lateinit var mProgressDialog: Dialog
 
+    // Override the onCreate method
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
     }
-
-
+    // Show a progress dialog
     fun showProgressDialog(text: String){
         mProgressDialog = Dialog(this)
 
@@ -24,10 +24,12 @@ open class BaseActivity : AppCompatActivity() {
         mProgressDialog.show()
     }
 
+    // Hide the progress dialog
     fun hideProgressDialog(){
         mProgressDialog.dismiss()
     }
 
+    // Get the current user's ID
     fun getCurrentUserID(): String{
         return FirebaseAuth.getInstance().currentUser!!.uid
     }
@@ -43,6 +45,8 @@ open class BaseActivity : AppCompatActivity() {
 //            Toast.LENGTH_SHORT
 //        ).show()
 //    }
+
+    // Show an error Snackbar
     fun showErrorSnackBar(message: String){
         val snackBar = Snackbar.make(findViewById(android.R.id.content),
             message,

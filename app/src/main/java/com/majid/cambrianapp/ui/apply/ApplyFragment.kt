@@ -21,8 +21,10 @@ import com.majid.cambrianapp.ui.home.HomeFragment
 
 class ApplyFragment : Fragment(){
 
+    // Adapter and RecyclerView references
     private lateinit var courseAdapter: CourseAdapter
     private lateinit var recyclerView: RecyclerView
+    // Binding for the fragment
     private var _binding: FragmentApplyBinding? = null
     private lateinit var checkBox: CheckBox
 
@@ -36,18 +38,24 @@ class ApplyFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Inflate the fragment's layout
         val view = inflater.inflate(R.layout.fragment_apply, container, false)!!
+        // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView)
         setupRecyclerView(recyclerView)
+        // Set up the Apply button
         val applybutton = view.findViewById<Button>(R.id.applyButton)
         applybutton.setOnClickListener {
+            // Iterate over RecyclerView to add selected courses
             iterateOverRecyclerView()
+            // Navigate to the home screen
             val navController = findNavController()
             navController.navigate(R.id.nav_home)
         }
         return view
     }
 
+    // Set up RecyclerView with sample courses
     private fun setupRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -57,6 +65,7 @@ class ApplyFragment : Fragment(){
         recyclerView.adapter = courseAdapter
     }
 
+    // Iterate over RecyclerView to add selected courses to CourseManager
     private fun iterateOverRecyclerView() {
 
         val courseAdapter = recyclerView.adapter as CourseAdapter
@@ -68,6 +77,7 @@ class ApplyFragment : Fragment(){
             }
         }
     }
+    // Create a list of sample courses
     private fun createSampleCourses(): List<Course> {
         return listOf(
             Course("JAV1001", "Introduction to Programming", "Intro to programming concepts.", "Prof. Smith",false),
@@ -77,6 +87,7 @@ class ApplyFragment : Fragment(){
             Course("BTA1002", "Calculus I", "Fundamental calculus concepts.", "Prof. Johnson",false),
          )
     }
+    // Clean up the binding reference when the view is destroyed
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

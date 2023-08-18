@@ -3,7 +3,7 @@ package com.majid.cambrianapp
 import android.os.Parcel
 import android.os.Parcelable
 
-
+//data class
 data class User(
     val id: String = "",
     val name: String = "",
@@ -11,6 +11,7 @@ data class User(
     val phone: String = "",
     val fcmToken: String = ""
 ) : Parcelable {
+    // Constructor for Parcelable
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
@@ -19,6 +20,7 @@ data class User(
         parcel.readString()!!,
     )
 
+    // Write object values to the Parcel
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
         parcel.writeString(name)
@@ -27,10 +29,12 @@ data class User(
         parcel.writeString(fcmToken)
     }
 
+    // Used when you need to print the object
     override fun describeContents(): Int {
         return 0
     }
 
+    // Write object values to the Parcel (alternative way)
     fun writeToParcel(dest: Parcel?, flags: Int) = with(dest){
         this?.writeString(id)
         this?.writeString(name)

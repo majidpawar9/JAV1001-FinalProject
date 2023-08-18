@@ -2,20 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
+    <!-- Define the navigation drawer menu items -->
+    <!-- Group of items with single checkable behavior -->
     <group android:checkableBehavior="single">
+        <!-- Home item -->
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/baseline_home_24"
             android:title="@string/menu_home" />
+        <!-- Profile item -->
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/baseline_person_24"
             android:title="@string/menu_profile" />
+        <!-- Apply item -->
         <item
             android:id="@+id/nav_apply"
             android:icon="@android:drawable/ic_menu_edit"
             android:title="@string/menu_apply" />
+        <!-- Logout item -->
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/baseline_logout_24"

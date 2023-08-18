@@ -9,7 +9,7 @@ data class User(
     val name: String = "",
     val email: String = "",
     val phone: String = "",
-    val fcmToken: String = "",
+    val fcmToken: String = ""
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,

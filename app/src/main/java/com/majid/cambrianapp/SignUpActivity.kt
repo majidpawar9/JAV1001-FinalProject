@@ -46,7 +46,7 @@ class SignUpActivity : BaseActivity() {
                     if (task.isSuccessful) {
                         val firebaseUser: FirebaseUser = task.result!!.user!!
                         val registeredEmail = firebaseUser.email!!
-                        val user = User(firebaseUser.uid, name = firstName +" "+ lastName,registeredEmail)
+                        val user = User(firebaseUser.uid, name = firstName,registeredEmail, phone = phone)
                         FireStore().registerUser(this,user)
                         Toast.makeText(
                             this,
